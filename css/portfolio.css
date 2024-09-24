@@ -1,1 +1,336 @@
+/* General Styles */
+body {
+    font-family: "Roboto", sans-serif;
+    color: #212121;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 800;
+    color: #2E2F42;
+}
+
+h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    color: #2E2F42;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Logo Styling */
+.logo {
+    font-family: "Raleway", sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    text-decoration: none;
+    color: #2E2F42;
+}
+
+.logo span {
+    color: #4D5AE5;
+}
+
+/* Social Media Icons */
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+}
+
+.container {
+    width: 1158px;
+    margin: 0 auto;
+}
+
+/* Section Spacing */
+.section {
+    padding: 60px 0;
+}
+
+/* Button Styles */
+button {
+    background-color: #4D5AE5;
+    color: #F4F4FD;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #404BBF;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #FFFFFF;
+    padding: 20px 0;
+    border-bottom: 2px solid #E7E9FC;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 156px;
+
+header .logo {
+    margin-right: 75px; 
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 40px; 
+}
+
+nav ul li a {
+    color: #2E2F42;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #4D5AE5;
+    border-bottom: 2px solid #4D5AE5;
+}
+
+header .contacts {
+    display: flex;
+    gap: 35px; 
+    margin-left: 332px;
+}
+
+header .contacts a {
+    color: #212121;
+    text-decoration: none;
+}
+
+header .contacts a:hover {
+    color: #404BBF;
+}
+
+
+/* Portfolio Section */
+.portfolio-section {
+    margin-top: 100px; 
+    text-align: center;
+}
+/* Cutia cu butoane de filtru */
+.portfolio-filters {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px; 
+    width: 586px; 
+    height: 48px; 
+    margin-left: auto;
+    margin-right: auto;     margin-bottom: 30px;
+}
+
+/* Stilizarea butoanelor din filtrul portofoliului */
+.portfolio-filters button {
+    width: auto;
+    padding: 10px 20px;
+    background-color: #E7E9FC; 
+    color: #4D5AE5; 
+    border: none; 
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-filters button:hover,
+.portfolio-filters button:focus {
+    background-color: #4D5AE5; 
+    color: white; 
+}
+
+/* Layout pentru grid-ul de elemente de portofoliu */
+.portfolio-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 24px;
+}
+
+/* Stilizare individuală pentru elementele de portofoliu */
+.portfolio-item {
+    position: relative;
+    width: 360px;
+    height: 420px; 
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e0e0e0;
+    border-radius: 0px;
+    overflow: hidden;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}}
+
+.portfolio-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Efect de hover pe imagine */
+.portfolio-item img {
+    width: 360px;
+    height: 300px;
+    object-fit: cover;
+    transition: filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Prima secțiune: Imaginea */
+.portfolio-item .image-container {
+    position: relative;
+    width: 360px;
+    height: 300px; 
+    overflow: hidden; 
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Suprapunerea albastră la hover doar pe imagine */
+.portfolio-item .image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(77, 90, 229, 0.8); 
+    transform: translateY(100%); 
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+/* Activează suprapunerea când treci cu mouse-ul peste imagine */
+.portfolio-item .image-container:hover::before {
+    transform: translateY(0); 
+}
+
+/* Caseta de text de sub imagine */
+.text-box {
+    width: 360px; 
+    height: 120px; 
+    background-color: #ffffff;
+    padding-left: 15px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 1px solid #e0e0e0;
+    z-index: 2; 
+
+/* Stilizare text în caseta de text */
+.text-box h3 {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px; 
+    font-weight: 500; 
+    line-height: 24px;
+    color: #2E2F42;
+    margin: 0 0 8px 0;
+}
+.text-box p {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px; 
+    font-weight: 400;
+    color: #757575;
+    margin: 0;
+}
+
+/* Footer Section */
+footer {
+    background-color: #2E2F42;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    gap: 20px; 
+}
+
+/* Footer Logo Section */
+.footer-logo {
+    width: 264px; 
+    height: 112px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.footer-logo img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.footer-logo p {
+    font-size: 0.75rem; 
+    line-height: 1.2;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* Social Media Section */
+.social-media {
+    width: 208px; 
+    height: 80px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: flex-start; 
+    box-sizing: border-box;
+}
+
+.social-media h3 {
+    font-size: 0.9rem; 
+    margin: 0 0 5px 0; 
+    color: #ffffff;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px; 
+}
+
+.social-icons a {
+    width: 32px; 
+    height: 32px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 
